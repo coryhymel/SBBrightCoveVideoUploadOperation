@@ -10,13 +10,18 @@ Initialize with a NSURL to a local video file along with an extension. Do not in
 
 
 ## Optional Properties
- You can optionally set the video name. If you do not explicitly set the video name, it will be generated using the current `NSDate` in the format of `MMddyyyyHHmm`.
+ 
+ ### Video Name
+ If you do not explicitly set the video name, it will be generated using the current `NSDate` in the format of `MMddyyyyHHmm`.
+
 `@property NSString *videoName`
 
+ ### Video Description
+If you do not explicitly set the video description, it will be generated using the current `NSDate` in the format of: "Created at: `MMddyyyyHHmm`".
 
- You can optionally set the video description. If you do not explicitly set the video description, it will be generated using the current `NSDate` in the format of: "Created at: `MMddyyyyHHmm`".
 `@property NSString *videoDescription`
 
+ ### Completion Block
+ Called when the operation is complete or if an error occurred. The `errorDisplayString` is a human readable string describing the error that occurred. 
 
- A completion block that is called when the operation is complete or if an error occurred. The `errorDisplayString` is a human readable string describing the error that occurred. 
 `@property (copy)void(^completion)(BOOL success, NSString *errorDisplayString)`
